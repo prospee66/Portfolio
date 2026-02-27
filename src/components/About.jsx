@@ -107,14 +107,6 @@ export default function About() {
             </div>
           </div>
 
-          <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="#contact" className="btn">
-              Hire Me <i className="uil uil-phone"></i>
-            </a>
-            <a href="#projects" className="btn hire-btn">
-              View Projects <i className="uil uil-arrow-right"></i>
-            </a>
-          </div>
         </div>
       </div>
     </section>
