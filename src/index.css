@@ -1223,7 +1223,7 @@ textarea:focus-visible {
     margin-bottom: 1rem;
   }
 
-  .image { width: 200px; height: 240px; }
+  .image { width: 270px; height: 330px; }
 
   .row { flex-direction: column; gap: 40px; }
   .col { width: 100%; }
@@ -1257,7 +1257,7 @@ textarea:focus-visible {
   nav { padding-inline: 5vw; height: 70px; }
   .featured-name  { font-size: 2rem; }
   .typedText      { font-size: 1.5rem; }
-  .image          { width: 160px; height: 200px; }
+  .image          { width: 230px; height: 280px; }
   .about-me .profile { width: 100px; height: 100px; }
   .about-me h2   { font-size: 1.5rem; }
   .contact-info h2 { font-size: 1.7rem; }
