@@ -36,7 +36,6 @@ export default function Experience() {
     <section className="section wrapper" id="experience">
       <div className="top-header">
         <h1>Experience</h1>
-        <span>My professional journey and education</span>
       </div>
 
       <div className="timeline">
