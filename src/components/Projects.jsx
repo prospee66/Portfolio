@@ -57,7 +57,7 @@ const projects = [
     icon: 'uil uil-suitcase',
     gradClass: 'grad-1',
     github: 'https://github.com',
-    live: '#',
+    live: 'https://portfolio-wdq1.vercel.app/',
   },
 ]
 
