@@ -1,5 +1,3 @@
-import cv from '../assets/MY PDF.pdf'
-
 const techStack = [
   { name: 'React',       icon: 'devicon-react-original colored'    },
   { name: 'Node.js',     icon: 'devicon-nodejs-plain colored'      },
@@ -21,10 +19,6 @@ export default function Skills() {
       <div className="top-header">
         <h1>Skills</h1>
       </div>
-
-      <a href={cv} download className="btn cv-download-btn">
-        Download CV <i className="uil uil-import"></i>
-      </a>
 
       <h2 className="tech-stack-title">My Tech Stack</h2>
 
