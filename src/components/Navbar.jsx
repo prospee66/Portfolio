@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react'
 import logoImg from '../assets/logo.jpg'
+import cvPdf   from '../assets/MY PDF.pdf'
 
 const navLinks = [
-  { href: '#home',       label: 'Home'       },
-  { href: '#about',      label: 'About'      },
-  { href: '#skills',     label: 'Skills'     },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects',   label: 'Projects'   },
-  { href: '#contact',    label: 'Contact'    },
+  { href: '#about',    label: 'About'    },
+  { href: cvPdf,       label: 'Resume',  external: true },
+  { href: '#projects', label: 'Projects' },
+  { href: '#skills',   label: 'Skills'   },
 ]
 
 export default function Navbar() {
-  const [activeLink, setActiveLink] = useState('#home')
+  const [activeLink, setActiveLink] = useState('#about')
 
   // Active link on scroll
   useEffect(() => {
@@ -21,7 +20,7 @@ export default function Navbar() {
       const scrollY = window.scrollY
 
       if (scrollY < 100) {
-        setActiveLink('#home')
+        setActiveLink('#about')
         return
       }
 
@@ -39,14 +38,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  function handleNavClick(href) {
-    setActiveLink(href)
-    const target = document.querySelector(href)
+  function handleNavClick(e, link) {
+    if (link.external) return // let browser handle PDF link
+    e.preventDefault()
+    setActiveLink(link.href)
+    const target = document.querySelector(link.href)
     if (target) {
       const nav = document.querySelector('nav')
       const offset = nav ? nav.offsetHeight : 70
-      const top = target.offsetTop - offset
-      window.scrollTo({ top, behavior: 'smooth' })
+      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' })
     }
   }
 
@@ -61,11 +61,13 @@ export default function Navbar() {
         {/* Desktop nav links */}
         <ul className="nav-menu-list desktop-nav">
           {navLinks.map(link => (
-            <li key={link.href} className="nav-list">
+            <li key={link.label} className="nav-list">
               <a
                 href={link.href}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noreferrer' : undefined}
                 className={`nav-link${activeLink === link.href ? ' active-link' : ''}`}
-                onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
+                onClick={e => handleNavClick(e, link)}
               >
                 {link.label}
               </a>
@@ -78,10 +80,12 @@ export default function Navbar() {
       <div className="bottom-nav">
         {navLinks.map(link => (
           <a
-            key={link.href}
+            key={link.label}
             href={link.href}
+            target={link.external ? '_blank' : undefined}
+            rel={link.external ? 'noreferrer' : undefined}
             className={`bottom-nav-link${activeLink === link.href ? ' active' : ''}`}
-            onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
+            onClick={e => handleNavClick(e, link)}
           >
             {link.label}
           </a>
