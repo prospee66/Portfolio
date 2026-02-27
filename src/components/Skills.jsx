@@ -6,13 +6,10 @@ const techStack = [
   { name: 'Java',        icon: 'devicon-java-plain colored'        },
   { name: 'HTML5',       icon: 'devicon-html5-plain colored'       },
   { name: 'CSS3',        icon: 'devicon-css3-plain colored'        },
-  { name: 'Express',     icon: 'devicon-express-original colored'  },
   { name: 'MongoDB',     icon: 'devicon-mongodb-plain colored'     },
   { name: 'MySQL',       icon: 'devicon-mysql-plain colored'       },
-  { name: 'Flutter',     icon: 'devicon-flutter-plain colored'     },
   { name: 'C++',         icon: 'devicon-cplusplus-plain colored'   },
   { name: 'PHP',         icon: 'devicon-php-plain colored'         },
-  { name: 'Django',      icon: 'devicon-django-plain colored'      },
   { name: 'TailwindCSS', icon: 'devicon-tailwindcss-plain colored' },
 ]
 
