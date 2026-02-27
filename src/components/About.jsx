@@ -5,7 +5,6 @@ export default function About() {
     <section className="section wrapper" id="about">
       <div className="top-header">
         <h1>About Me</h1>
-        <span>Get to know me better</span>
       </div>
 
       <div className="about-grid">
@@ -109,11 +108,11 @@ export default function About() {
           </div>
 
           <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="#contact" className="about-me-btn">
-              Hire Me <i className="uil uil-arrow-right" style={{ marginLeft: '0.4rem' }}></i>
+            <a href="#contact" className="btn">
+              Hire Me <i className="uil uil-phone"></i>
             </a>
-            <a href="#projects" className="about-me-btn" style={{ background: 'transparent', color: 'var(--primary-color)', border: '2px solid var(--primary-color)' }}>
-              View Projects
+            <a href="#projects" className="btn hire-btn">
+              View Projects <i className="uil uil-arrow-right"></i>
             </a>
           </div>
         </div>

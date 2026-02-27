@@ -1191,9 +1191,9 @@ textarea:focus-visible {
 
   .featured-box {
     flex-direction: column-reverse;
-    padding-top: 100px;
+    padding-top: 90px;
     height: auto;
-    min-height: 100vh;
+    min-height: unset;
   }
 
   .featured-text {
@@ -1214,12 +1214,16 @@ textarea:focus-visible {
 
   .featured-image {
     position: relative;
+    flex: 0 0 auto;
     width: 100%;
     height: auto;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
   }
 
-  .image { width: 250px; height: 300px; }
+  .image { width: 200px; height: 240px; }
 
   .row { flex-direction: column; gap: 40px; }
   .col { width: 100%; }
@@ -1253,7 +1257,7 @@ textarea:focus-visible {
   nav { padding-inline: 5vw; height: 70px; }
   .featured-name  { font-size: 2rem; }
   .typedText      { font-size: 1.5rem; }
-  .image          { width: 200px; height: 250px; }
+  .image          { width: 160px; height: 200px; }
   .about-me .profile { width: 100px; height: 100px; }
   .about-me h2   { font-size: 1.5rem; }
   .contact-info h2 { font-size: 1.7rem; }
