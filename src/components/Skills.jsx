@@ -65,7 +65,6 @@ export default function Skills() {
     <section className="section wrapper" id="skills" ref={sectionRef}>
       <div className="top-header">
         <h1>Skills</h1>
-        <span>My technical proficiency across different areas</span>
       </div>
 
       <div className="skills-tabs">
