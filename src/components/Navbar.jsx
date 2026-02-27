@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import logoImg from '../assets/logo.jpg'
 
 const navLinks = [
@@ -11,9 +11,7 @@ const navLinks = [
 ]
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('#home')
-  const menuRef = useRef(null)
 
   // Active link on scroll
   useEffect(() => {
@@ -41,56 +39,27 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close menu when clicking outside
-  useEffect(() => {
-    function handleClickOutside(e) {
-      if (menuOpen && menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenuOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [menuOpen])
-
-  // Prevent body scroll when menu is open
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
-
   function handleNavClick(href) {
-    setMenuOpen(false)
     setActiveLink(href)
-
-    // Smooth scroll with navbar offset
     const target = document.querySelector(href)
     if (target) {
       const nav = document.querySelector('nav')
-      const offset = nav ? nav.offsetHeight : 90
+      const offset = nav ? nav.offsetHeight : 70
       const top = target.offsetTop - offset
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }
 
   return (
-    <nav>
-      <div className="nav-logo">
-        <img src={logoImg} alt="Logo" className="logo" />
-      </div>
+    <>
+      {/* Top navbar */}
+      <nav>
+        <div className="nav-logo">
+          <img src={logoImg} alt="Logo" className="logo" />
+        </div>
 
-      <div
-        ref={menuRef}
-        className={`nav-menu${menuOpen ? ' responsive' : ''}`}
-        id="myNavmenu"
-      >
-        {/* Close button (mobile) */}
-        {menuOpen && (
-          <div className="close-btn" onClick={() => setMenuOpen(false)}>
-            <i className="uil uil-times"></i>
-          </div>
-        )}
-
-        <ul className="nav-menu-list">
+        {/* Desktop nav links */}
+        <ul className="nav-menu-list desktop-nav">
           {navLinks.map(link => (
             <li key={link.href} className="nav-list">
               <a
@@ -103,11 +72,21 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
 
-      <div className="nav-menu-btn" onClick={() => setMenuOpen(true)}>
-        <i className="uil uil-bars"></i>
+      {/* Mobile bottom nav */}
+      <div className="bottom-nav">
+        {navLinks.map(link => (
+          <a
+            key={link.href}
+            href={link.href}
+            className={`bottom-nav-link${activeLink === link.href ? ' active' : ''}`}
+            onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
+          >
+            {link.label}
+          </a>
+        ))}
       </div>
-    </nav>
+    </>
   )
 }
