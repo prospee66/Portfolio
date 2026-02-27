@@ -65,9 +65,7 @@ export default function Projects() {
   return (
     <section className="section wrapper" id="projects">
       <div className="top-header">
-        <span className="section-label">My Work</span>
         <h1>Projects</h1>
-        <span>Things I've built that I'm proud of</span>
       </div>
 
       {/* Projects Grid */}

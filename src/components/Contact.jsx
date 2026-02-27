@@ -66,7 +66,6 @@ export default function Contact() {
     <section className="section wrapper" id="contact">
       <div className="top-header">
         <h1>Contact Me</h1>
-        <span>Get in touch with me</span>
       </div>
 
       <div className="row">
