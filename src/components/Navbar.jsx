@@ -10,7 +10,7 @@ const navLinks = [
   { href: '#contact',    label: 'Contact'    },
 ]
 
-export default function Navbar({ darkMode, toggleDarkMode }) {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('#home')
   const menuRef = useRef(null)
@@ -104,11 +104,6 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="moon-sun" id="toggle-switch" onClick={toggleDarkMode}>
-        <i className="uil uil-moon" id="moon"></i>
-        <i className="uil uil-sun"  id="sun"></i>
       </div>
 
       <div className="nav-menu-btn" onClick={() => setMenuOpen(true)}>

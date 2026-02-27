@@ -21,17 +21,17 @@
   --box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
   --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
 
-  --body-color: var(--background-light);
-  --color-white: var(--background-light);
-  --text-color: var(--text-dark);
+  --body-color: #111827;
+  --color-white: #f9fafb;
+  --text-color: #f9fafb;
   --first-color: var(--primary-color);
-  --first-shadow: rgba(0,0,0,0.1);
-  --box-color: #fff;
-  --nav-color: rgba(255,255,255,0.95);
-  --nav-icon: var(--text-dark);
-  --logo-color: var(--text-dark);
-  --icon-color: var(--primary-color);
-  --mode-color: #ddd;
+  --first-shadow: rgba(0,0,0,0.3);
+  --box-color: #1f2937;
+  --nav-color: rgba(31,41,55,0.95);
+  --nav-icon: #f9fafb;
+  --logo-color: #f9fafb;
+  --icon-color: var(--primary-light);
+  --mode-color: #374151;
 
   --heading-font: 'Poppins', sans-serif;
   --body-font: 'Roboto', sans-serif;
@@ -43,35 +43,6 @@
   --section-spacing: 6rem;
 }
 
-/* ========== DARK MODE ========== */
-body.dark {
-  --body-color: #111827;
-  --box-color: #1f2937;
-  --nav-color: rgba(31,41,55,0.95);
-  --color-white: #f9fafb;
-  --text-color: #f9fafb;
-  --text-muted: #9ca3af;
-  --nav-icon: #f9fafb;
-  --logo-color: #f9fafb;
-  --icon-color: var(--primary-light);
-  --mode-color: #374151;
-  --first-shadow: rgba(0,0,0,0.3);
-}
-
-body.dark .nav-menu {
-  background: rgba(31, 41, 55, 0.95);
-}
-
-body.dark .nav-link {
-  color: var(--color-white);
-}
-
-body.dark .input-field,
-body.dark .input-subject,
-body.dark textarea {
-  color: var(--color-white);
-  border-color: #444;
-}
 
 /* ========== GENERAL ========== */
 html {
@@ -216,34 +187,6 @@ nav {
   color: var(--nav-icon);
 }
 
-/* ========== DARK MODE TOGGLE ========== */
-.moon-sun {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  background: var(--mode-color);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: background var(--transition-normal), transform 0.2s ease;
-}
-
-.moon-sun:hover { transform: scale(1.1); }
-
-.moon-sun i {
-  font-size: 20px;
-  position: absolute;
-  transition: all 0.5s ease-in-out;
-}
-
-#moon { color: #f1c40f; opacity: 1; }
-#sun  { color: #f39c12; opacity: 0; }
-
-body.dark #moon { opacity: 0; }
-body.dark #sun  { opacity: 1; }
 
 /* ========== HERO SECTION ========== */
 .featured-box {
@@ -900,7 +843,7 @@ body.dark #sun  { opacity: 1; }
 textarea {
   width: 100%;
   padding: 1rem 1.5rem;
-  border: 2px solid rgba(0,0,0,0.05);
+  border: 2px solid #444;
   background: transparent;
   border-radius: 12px;
   font-size: 1rem;
@@ -1936,7 +1879,7 @@ textarea:focus-visible {
   cursor: pointer;
 }
 
-body.dark .project-card {
+.project-card {
   border-color: rgba(255,255,255,0.07);
 }
 
@@ -2038,7 +1981,7 @@ body.dark .project-card {
   z-index: 1;
 }
 
-body.dark .project-card-actions {
+.project-card-actions {
   border-top-color: rgba(255,255,255,0.07);
 }
 

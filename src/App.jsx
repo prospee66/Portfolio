@@ -10,19 +10,8 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem('darkMode') === 'true'
-  )
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showBackTop, setShowBackTop]       = useState(false)
-
-  // Apply dark mode class to body
-  useEffect(() => {
-    document.body.classList.toggle('dark', darkMode)
-    localStorage.setItem('darkMode', darkMode)
-    const meta = document.getElementById('theme-color-meta')
-    if (meta) meta.setAttribute('content', darkMode ? '#1f2937' : '#6d28d9')
-  }, [darkMode])
 
   // Scroll progress + back-to-top
   useEffect(() => {
@@ -36,8 +25,6 @@ function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const toggleDarkMode = () => setDarkMode(prev => !prev)
-
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -47,7 +34,7 @@ function App() {
       {/* Scroll progress bar */}
       <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
 
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Navbar />
 
       <div className="container">
         <Hero />
