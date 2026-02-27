@@ -3,7 +3,6 @@ import logoImg from '../assets/logo.jpg'
 
 const navLinks = [
   { href: '#home',       label: 'Home'       },
-  { href: '#about',      label: 'About'      },
   { href: '#skills',     label: 'Skills'     },
   { href: '#experience', label: 'Experience' },
   { href: '#projects',   label: 'Projects'   },
@@ -76,7 +75,6 @@ export default function Navbar() {
     <nav>
       <div className="nav-logo">
         <img src={logoImg} alt="Logo" className="logo" />
-        <p className="nav-name">Prosper</p>
       </div>
 
       <div
