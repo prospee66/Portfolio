@@ -1070,6 +1070,9 @@ textarea:focus-visible {
 }
 
 @media (max-width: 900px) {
+  /* Hide entire top navbar on mobile */
+  nav { display: none !important; }
+
   /* Hide desktop nav links on mobile */
   .desktop-nav { display: none !important; }
 
