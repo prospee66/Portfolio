@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 import heroImg from '../assets/prospeee.jpg'
-import cv from '../assets/MY PDF.pdf'
 
 export default function Hero() {
   const typedRef = useRef(null)
@@ -21,15 +20,6 @@ export default function Hero() {
     return () => typed.destroy()
   }, [])
 
-  function scrollTo(id) {
-    const el = document.querySelector(id)
-    if (el) {
-      const nav = document.querySelector('nav')
-      const offset = nav ? nav.offsetHeight : 90
-      window.scrollTo({ top: el.offsetTop - offset, behavior: 'smooth' })
-    }
-  }
-
   return (
     <section className="section featured-box" id="home">
       <div className="featured-text">
@@ -45,19 +35,6 @@ export default function Hero() {
           responsive web design and development. I craft clean, modern, and
           user-friendly digital experiences.
         </p>
-
-        <div className="text-btn">
-          <a
-            href="#contact"
-            className="btn hire-btn"
-            onClick={e => { e.preventDefault(); scrollTo('#contact') }}
-          >
-            Hire Me <i className="uil uil-phone"></i>
-          </a>
-          <a href={cv} download className="btn">
-            Download CV <i className="uil uil-import"></i>
-          </a>
-        </div>
 
         <div className="social_icons">
           <div className="icon_circle"></div>
